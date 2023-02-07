@@ -38,8 +38,8 @@ BTreeNode *RotateRL(BTreeNode *bst)
 	pNode = bst;
 	cNode = GetRightSubTree(pNode);
 
-	ChangeRightSubTree(pNode, RotateLL(cNode)); // �κ��� LL ȸ��
-	return RotateRR(pNode);						// RR ȸ��
+	ChangeRightSubTree(pNode, RotateLL(cNode)); // 부분적 LL 회전
+	return RotateRR(pNode);		// RR 회전
 }
 
 // LR 회전
@@ -51,8 +51,8 @@ BTreeNode *RotateLR(BTreeNode *bst)
 	pNode = bst;
 	cNode = GetLeftSubTree(pNode);
 
-	ChangeLeftSubTree(pNode, RotateRR(cNode)); // �κ��� RR ȸ��
-	return RotateLL(pNode);					   // LL ȸ��
+	ChangeLeftSubTree(pNode, RotateRR(cNode)); // 부분적 RR 회전
+	return RotateLL(pNode);		// LL 회전
 }
 
 // 트리의 높이를 계산하여 반환
